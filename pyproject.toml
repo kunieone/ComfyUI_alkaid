@@ -1,0 +1,14 @@
+[project]
+name = "comfyui_alkaid"
+description = "Nodes:A_Face3DSwapper, A_FaceCrop, A_FacePaste, A_OpenPosePreprocessor, A_EmptyLatentImageLongside, A_GetImageSize, AlkaidLoader, AdapterFaceLoader, AdapterStyleLoader, ..."
+version = "1.0.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/kunieone/ComfyUI_alkaid"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_alkaid"
+Icon = ""
