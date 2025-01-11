@@ -8,7 +8,7 @@ import torch.nn.functional as F
 import torchvision.transforms as TT
 import torchvision.transforms.functional as TTF
 import comfy.model_management
-from comfyui_controlnet_aux.utils import common_annotator_call, create_node_input_types
+from custom_nodes.comfyui_controlnet_aux.utils import common_annotator_call
 import comfy.samplers
 import comfy.utils
 from nodes import common_ksampler
@@ -17,6 +17,16 @@ from .utils import (BBRegression, tensorToNP, tensor2pil, pil2tensor, draw_kps,
                     get_estimate_bbox, extract_5p)
 from .ipadapter.utils import set_model_patch_replace
 
+def create_node_input_types(**extra_kwargs):
+    return {
+        "required": {
+            "image": ("IMAGE",)
+        },
+        "optional": {
+            **extra_kwargs,
+            "resolution": ("INT", {"default": 512, "min": 64, "max": MAX_RESOLUTION, "step": 64})
+        }
+    }
 
 class FaceCrop:
     @classmethod
